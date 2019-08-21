@@ -1,0 +1,30 @@
+{
+  "name": "vuepress-theme-tomato",
+  "version": "0.0.1",
+  "description": "Vuepress 的一款博客主题",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev demo --no-cache",
+    "build": "vuepress build demo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/destinytaoer/vuepress-theme-tomato.git"
+  },
+  "keywords": [
+    "vue",
+    "blog",
+    "vuepress",
+    "theme"
+  ],
+  "author": "destiny",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/destinytaoer/vuepress-theme-tomato/issues"
+  },
+  "homepage": "https://github.com/destinytaoer/vuepress-theme-tomato#readme",
+  "devDependencies": {
+    "@vuepress/plugin-blog": "^1.2.4",
+    "vuepress": "^1.0.3"
+  }
+}
