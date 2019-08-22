@@ -32,6 +32,7 @@ export default {
 };
 </script>
 <style src="prismjs/themes/prism-tomorrow.css"></style>
+<style src="../font/iconfont.css"></style>
 <style src="../styles/index.styl" lang="stylus"></style>
 <style lang="stylus">
 @import '../styles/variables.styl';
