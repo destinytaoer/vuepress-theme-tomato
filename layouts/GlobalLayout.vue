@@ -33,6 +33,10 @@ export default {
 <style lang="stylus">
 @import '../styles/variables.styl';
 
+html, body {
+  background-image: $bgColor;
+}
+
 .wrapper {
   .sidebar-wrapper {
     position: fixed;
