@@ -1,4 +1,4 @@
 module.exports = {
-  title: '70 lines of vuepress blog theme',
+  title: 'theme-tomato-demo',
   theme: require.resolve('../../')
-}
+};
