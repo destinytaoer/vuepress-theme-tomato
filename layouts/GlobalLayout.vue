@@ -9,6 +9,7 @@
     <Header></Header>
     <DefaultGlobalLayout />
     <Footer></Footer>
+    <!-- <BackToTop></BackToTop> -->
   </div>
 </template>
 
@@ -17,13 +18,15 @@ import GlobalLayout from "@app/components/GlobalLayout.vue";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Aside from "../components/Aside";
+import BackToTop from "../components/BackToTop";
 
 export default {
   components: {
     DefaultGlobalLayout: GlobalLayout,
     Header,
     Footer,
-    Aside
+    Aside,
+    BackToTop
   },
   mounted() {}
 };
@@ -38,6 +41,10 @@ html, body {
 }
 
 .wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
   .sidebar-wrapper {
     position: fixed;
     width: $sidebarWidth;
@@ -47,6 +54,10 @@ html, body {
     min-height: 100%;
     z-index: 50;
     background-image: $bgColor;
+  }
+
+  .theme-container, .blog {
+    flex: 1;
   }
 }
 </style>
