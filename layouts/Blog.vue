@@ -3,7 +3,7 @@
     <ul class="post-list">
       <li
         class="post-list-item fade"
-        v-for="post in $pagination.pages"
+        v-for="post in posts"
         :key="post.relativePath"
       >
         <article
@@ -17,7 +17,6 @@
           >
             <router-link :to="post.path">{{post.title}}</router-link>
           </h2>
-          {{post}}
           <ul class="post-meta">
             <li>
               <i class="icon icon-calendar"></i>
@@ -74,23 +73,17 @@ export default {
     return {};
   },
   computed: {
-    // index() {
-    //   let match = this.$route.path.match(/^\/blog\/page\/(\d+)\/$/i);
-    //   if (!match) return 1;
-    //   return +match[1];
-    // },
-    // pageSize() {
-    //   return this.$themeConfig.pageSize;
-    // },
-    // posts() {
-    //   let start = (this.index - 1) * this.pageSize;
-    //   let end = this.index * this.pageSize;
-    //   let posts = this.$posts.slice(start, end);
-    //   return posts;
-    // },
-    // pageNum() {
-    //   return Math.ceil(this.$posts.length / this.pageSize);
-    // }
+    posts() {
+      let posts = JSON.parse(JSON.stringify(this.$pagination.pages));
+      posts.map(p => {
+        p.createdAt = moment(p.frontmatter.date).format("YYYY-MM-DD");
+        let updatedAt = p.frontmatter.update || p.frontmatter.date;
+        p.updatedAt = moment(updatedAt).format("YYYY-MM-DD");
+        return p;
+      });
+
+      return posts;
+    }
   },
   methods: {},
   components: {
