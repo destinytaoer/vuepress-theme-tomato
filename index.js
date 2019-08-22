@@ -1,3 +1,4 @@
+const moment = require('moment');
 module.exports = {
   extend: '@vuepress/theme-default',
   plugins: [
@@ -41,6 +42,17 @@ module.exports = {
         ]
       }
     ],
-    '@vuepress/search'
+    '@vuepress/search',
+    [
+      '@vuepress/last-updated',
+      {
+        transformer: (timestamp, lang) => {
+          // 不要忘了安装 moment
+          const moment = require('moment');
+          moment.locale('zh-CN');
+          return moment(timestamp).fromNow();
+        }
+      }
+    ]
   ]
 };
