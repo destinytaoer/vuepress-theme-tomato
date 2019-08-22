@@ -45,12 +45,15 @@ export default {
 
 .header {
   position: fixed;
+  top: 0;
+  right: 0;
   width: 100%;
   padding-left: $sidebarWidth;
   height: $headerHeight;
   line-height: $headerHeight;
   text-align: center;
   transition: all 0.3s linear;
+  z-index: 10;
 
   &.active {
     background-color: $themeColor;

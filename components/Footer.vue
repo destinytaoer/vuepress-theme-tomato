@@ -143,10 +143,9 @@ export default {
 @import '../styles/variables.styl';
 
 .footer {
-  padding: 1rem 0;
-  height: $footerHeight;
+  padding: 10px 0;
   text-align: center;
-  margin-top: 5rem;
+  margin-top: 50px;
   padding-left: $sidebarWidth;
   border-top: 1px solid #eee;
   box-shadow: 0 -1px 10px 1px $shadowColor;

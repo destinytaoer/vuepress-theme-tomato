@@ -34,7 +34,7 @@ export default {
   }
 };
 </script>
-<style lang="stylus" scoped>
+<style lang="stylus">
 @import '../styles/variables.styl';
 
 .nav-list {

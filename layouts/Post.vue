@@ -237,9 +237,11 @@ function flattern(items, res) {
 
 <style lang="stylus">
 @require '../styles/wrapper';
+@import '../styles/variables.styl';
 
 .page {
   display: block;
+  padding-left: $sidebarWidth;
   padding-bottom: 2rem;
 }
 
