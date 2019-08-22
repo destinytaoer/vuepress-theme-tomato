@@ -97,11 +97,11 @@ export default {
 @import '../styles/variables.styl';
 
 .blog {
-  padding: 5rem 1rem;
+  padding-top: 5rem;
+  padding-left: $sidebarWidth;
 
   .post-list {
     padding: 0;
-    margin: 0 -12px;
     list-style: none;
 
     .post-title a {
@@ -127,8 +127,7 @@ export default {
   }
 
   .post-content {
-    width: 80%;
-    margin: 0 auto;
+    width: 100%;
     padding-bottom: 10px;
 
     > div {
