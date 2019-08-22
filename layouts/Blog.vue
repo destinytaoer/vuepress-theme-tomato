@@ -57,17 +57,17 @@
         </article>
       </li>
     </ul>
-    <!-- <Pagination
-      v-if="pageNum > 1"
-      :current="index"
-      :basePath="'/blog'"
-      :total="pageNum"
-    ></Pagination> -->
+    <Pagination
+      v-if="$pagination.length > 1"
+      :current="$pagination.paginationIndex + 1"
+      :total="$pagination.length"
+    ></Pagination>
   </div>
 </template>
 
 <script>
 import moment from "moment";
+import Pagination from "../components/Pagination";
 export default {
   data() {
     return {};
@@ -88,7 +88,7 @@ export default {
   methods: {},
   components: {
     // TagList,
-    // Pagination
+    Pagination
   },
   mounted() {
     console.log(this.$page);
