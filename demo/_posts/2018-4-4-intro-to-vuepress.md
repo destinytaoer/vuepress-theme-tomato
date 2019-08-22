@@ -275,5 +275,3 @@ yarn deploy "updatedBlog"
 太喜欢 VuePress 了，因为后面都托管给 Vue 了，所以速度飞快。
 
 后续会出一个如何修改默认主题的文章。
-
-<Quote>生命的意义不仅是活着，而是我们给别人的生命带来了何种不同。</Quote>
