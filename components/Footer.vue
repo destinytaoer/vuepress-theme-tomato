@@ -1,5 +1,5 @@
 <template>
-  <footer :class="['footer', hasSideBar ? 'post-footer' : '']">
+  <footer class="footer">
     <p>© 2016-{{present}} <i class="icon icon-love"></i> destiny</p>
     <span>
       <i class="icon icon-myself">
@@ -24,12 +24,6 @@
 
 <script>
 export default {
-  props: {
-    hasSideBar: {
-      type: Boolean,
-      default: false
-    }
-  },
   data() {
     return {
       present: new Date().getFullYear()
@@ -149,17 +143,21 @@ export default {
 @import '../styles/variables.styl';
 
 .footer {
+  padding: 1rem 0;
   height: $footerHeight;
   text-align: center;
+  margin-top: 5rem;
+  border-top: 1px solid #eee;
+  box-shadow: 0 -1px 10px 1px rgba(0, 0, 0, 0.2);
 
-  &.post-footer {
-    padding-left: 20rem;
+  span i:first-child {
+    margin-right: 1em;
   }
 }
 
 @media (max-width: $MQMobile) {
-  .footer.post-footer {
-    padding-left: 0;
+  .footer {
+    font-size: 12px;
   }
 }
 </style>
