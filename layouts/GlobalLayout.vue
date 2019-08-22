@@ -6,13 +6,9 @@
     <div class="sidebar-wrapper">
       <Aside></Aside>
     </div>
-    <div class="content-wrapper">
-      <Header></Header>
-      <div class="content">
-        <DefaultGlobalLayout />
-      </div>
-      <Footer></Footer>
-    </div>
+    <Header></Header>
+    <DefaultGlobalLayout />
+    <Footer></Footer>
   </div>
 </template>
 
@@ -47,18 +43,6 @@ export default {
     min-height: 100%;
     z-index: 50;
     background-image: $bgColor;
-  }
-
-  .content-wrapper {
-    padding-left: $sidebarWidth;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-
-    .content {
-      flex: 1;
-    }
   }
 }
 </style>
