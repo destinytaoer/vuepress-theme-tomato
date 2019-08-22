@@ -4,7 +4,7 @@
     class="wrapper"
   >
     <div class="sidebar-wrapper">
-
+      <Aside></Aside>
     </div>
     <div class="content-wrapper">
       <Header></Header>
@@ -20,13 +20,16 @@
 import GlobalLayout from "@app/components/GlobalLayout.vue";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Aside from "../components/Aside";
 
 export default {
   components: {
     DefaultGlobalLayout: GlobalLayout,
     Header,
-    Footer
-  }
+    Footer,
+    Aside
+  },
+  mounted() {}
 };
 </script>
 <style src="prismjs/themes/prism-tomorrow.css"></style>
@@ -35,14 +38,17 @@ export default {
 @import '../styles/variables.styl';
 
 .wrapper {
-  display: flex;
-
   .sidebar-wrapper {
-    flex: 0 $sidebarWidth;
+    position: fixed;
+    width: $sidebarWidth;
+    height: 100vh;
+    z-index: 50;
+    background-image: $bgColor;
   }
 
   .content-wrapper {
-    flex: 1;
+    padding-left: $sidebarWidth;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     min-height: 100vh;

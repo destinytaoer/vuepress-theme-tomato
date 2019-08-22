@@ -89,11 +89,6 @@ export default {
   components: {
     // TagList,
     Pagination
-  },
-  mounted() {
-    console.log(this.$page);
-    console.log(this.$pagination);
-    console.log(this.$pagination.pages);
   }
 };
 </script>
