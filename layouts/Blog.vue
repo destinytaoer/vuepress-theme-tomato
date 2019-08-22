@@ -21,10 +21,10 @@
             <li>
               <i class="icon icon-calendar"></i>
               <time
-                :datetime="post.createdAt"
+                :datetime="post.updatedAt"
                 itemprop="dateUpdate"
               >
-                {{post.createdAt}}</time>
+                {{post.updatedAt}}</time>
             </li>
             <li>
               <i class="icon icon-folder-open"></i>
