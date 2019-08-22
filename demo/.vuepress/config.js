@@ -3,6 +3,7 @@ module.exports = {
   description: '一款为 Vuepress 打造的博客主题',
   theme: require.resolve('../../'),
   themeConfig: {
+    lastUpdated: '最后更新时间',
     avatar: 'avatar.jpg',
     nickname: 'Tomato',
     nav: [
