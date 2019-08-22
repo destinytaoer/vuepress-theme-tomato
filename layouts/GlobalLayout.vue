@@ -41,7 +41,10 @@ export default {
   .sidebar-wrapper {
     position: fixed;
     width: $sidebarWidth;
-    height: 100vh;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    min-height: 100%;
     z-index: 50;
     background-image: $bgColor;
   }

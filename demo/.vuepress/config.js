@@ -8,19 +8,23 @@ module.exports = {
     nav: [
       {
         text: '主页',
-        link: '/'
+        link: '/',
+        icon: 'home'
       },
       {
         text: '归档',
-        link: '/archives/'
+        link: '/archives/',
+        icon: 'archives'
       },
       {
         text: '标签',
-        link: '/tag/'
+        link: '/tag/',
+        icon: 'tag'
       },
       {
-        text: '标签',
-        link: '/category/'
+        text: '分类',
+        link: '/category/',
+        icon: 'category'
       }
     ]
   }

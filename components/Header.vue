@@ -60,7 +60,7 @@ export default {
   h1 {
     display: block;
     margin: 0;
-    color: #fff;
+    color: $titleColor;
   }
 
   .search-box {
