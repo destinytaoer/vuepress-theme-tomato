@@ -47,7 +47,6 @@ export default {
   position: fixed;
   width: 100%;
   padding-left: $sidebarWidth;
-  margin-left: - $sidebarWidth;
   height: $headerHeight;
   line-height: $headerHeight;
   text-align: center;

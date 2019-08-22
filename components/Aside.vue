@@ -65,6 +65,7 @@ export default {
     .nickname {
       font-size: 25px;
       margin: 10px 0;
+      border-bottom: none;
     }
 
     .descr {

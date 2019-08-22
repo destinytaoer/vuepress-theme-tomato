@@ -147,6 +147,7 @@ export default {
   height: $footerHeight;
   text-align: center;
   margin-top: 5rem;
+  padding-left: $sidebarWidth;
   border-top: 1px solid #eee;
   box-shadow: 0 -1px 10px 1px $shadowColor;
 
