@@ -48,12 +48,12 @@
               >阅读全文</router-link>
             </div>
           </div>
-          <!-- <div
+          <div
             class="post-footer"
             v-if="post.frontmatter.tags && post.frontmatter.tags.length"
           >
             <TagList :tags="post.frontmatter.tags"></TagList>
-          </div> -->
+          </div>
         </article>
       </li>
     </ul>
@@ -68,10 +68,8 @@
 <script>
 import moment from "moment";
 import Pagination from "../components/Pagination";
+import TagList from "../components/TagList";
 export default {
-  data() {
-    return {};
-  },
   computed: {
     posts() {
       let posts = JSON.parse(JSON.stringify(this.$pagination.pages));
@@ -87,7 +85,7 @@ export default {
   },
   methods: {},
   components: {
-    // TagList,
+    TagList,
     Pagination
   }
 };
