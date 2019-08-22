@@ -50,7 +50,6 @@ export default {
   margin-left: - $sidebarWidth;
   height: $headerHeight;
   line-height: $headerHeight;
-  overflow: hidden;
   text-align: center;
   transition: all 0.3s linear;
 
