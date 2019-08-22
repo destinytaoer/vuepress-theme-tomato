@@ -48,8 +48,9 @@ export default {
   width: 100%;
   padding-left: $sidebarWidth;
   margin-left: - $sidebarWidth;
-  height: 3em;
-  line-height: 3em;
+  height: $headerHeight;
+  line-height: $headerHeight;
+  overflow: hidden;
   text-align: center;
   transition: all 0.3s linear;
 

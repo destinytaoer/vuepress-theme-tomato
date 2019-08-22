@@ -148,7 +148,7 @@ export default {
   text-align: center;
   margin-top: 5rem;
   border-top: 1px solid #eee;
-  box-shadow: 0 -1px 10px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 -1px 10px 1px $shadowColor;
 
   span i:first-child {
     margin-right: 1em;
