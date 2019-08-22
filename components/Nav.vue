@@ -31,9 +31,6 @@ export default {
         return [];
       }
     }
-  },
-  mounted() {
-    console.log(this.navs);
   }
 };
 </script>
@@ -60,16 +57,19 @@ export default {
     align-items: center;
     width: 100%;
     height: 40px;
-    padding: 0 0.7em;
+    padding-right: 1em;
     color: $color;
     font-weight: 700;
     font-size: 18px;
     transition: all 0.5s ease;
 
     &.router-link-active, &:hover {
-      font-size: 20px;
       color: #000;
       background-color: $activeBgColor;
+    }
+
+    &:hover {
+      transform: scale(1.1);
     }
 
     .icon {

@@ -17,19 +17,18 @@
       </div>
     </div>
     <my-nav :navs="navs"></my-nav>
+    <Contact></Contact>
   </aside>
 </template>
 <script>
 import MyNav from "../components/Nav";
+import Contact from "../components/Contact";
 export default {
-  components: { MyNav },
+  components: { MyNav, Contact },
   computed: {
     navs() {
       return this.$themeConfig.nav || [];
     }
-  },
-  mounted() {
-    console.log(this.$themeConfig.nav);
   }
 };
 </script>
@@ -43,7 +42,7 @@ export default {
 
   .avatar-wrapper {
     margin-top: $headerHeight;
-    padding: $headerHeight 0;
+    padding: 10px 0;
 
     .avatar {
       display: block;

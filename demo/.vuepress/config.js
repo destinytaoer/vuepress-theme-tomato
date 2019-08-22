@@ -26,6 +26,28 @@ module.exports = {
         link: '/category/',
         icon: 'category'
       }
+    ],
+    contact: [
+      {
+        icon: 'email',
+        text: 'email',
+        link: 'mailto:1848765519@qq.com'
+      },
+      {
+        icon: 'github',
+        text: 'Github',
+        link: 'https://github.com/destinytaoer'
+      },
+      {
+        icon: 'csdn',
+        text: 'CSDN',
+        link: 'https://blog.csdn.net/destinytaoer'
+      },
+      {
+        icon: 'wechat',
+        text: 'WeChat',
+        link: 'weixin.jpg'
+      }
     ]
   }
 };
