@@ -82,6 +82,7 @@ html, body {
 .wrapper {
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   min-height: 100vh;
 
   &.sidebar-open {
