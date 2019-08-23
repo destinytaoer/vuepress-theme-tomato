@@ -7,7 +7,7 @@
     >
       <router-link
         class="tag-list-link waves-effect waves-button"
-        :to="`/tags/${tag}/`"
+        :to="`/tag/${tag}/`"
       >
         {{tag}}
       </router-link>
