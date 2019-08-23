@@ -45,7 +45,7 @@ export default {
 
 .category {
   padding-top: 5rem;
-  padding-left: $sidebarWidth;
+  padding-left: $asideWith;
 
   .category-wrapper {
     @extend $wrapper;

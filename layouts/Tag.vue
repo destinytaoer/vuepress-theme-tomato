@@ -45,7 +45,7 @@ export default {
 
 .tag {
   padding-top: 5rem;
-  padding-left: $sidebarWidth;
+  padding-left: $asideWith;
 
   .tag-wrapper {
     @extend $wrapper;

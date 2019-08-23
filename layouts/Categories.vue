@@ -29,7 +29,7 @@ export default {
 
 .categories {
   padding-top: 5rem;
-  padding-left: $sidebarWidth;
+  padding-left: $asideWith;
 
   .categories-wrapper {
     @extend $wrapper;

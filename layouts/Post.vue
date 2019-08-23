@@ -238,7 +238,7 @@ function flattern(items, res) {
 
 .page {
   display: block;
-  padding-left: $sidebarWidth;
+  padding-left: $asideWith;
   padding-bottom: 2rem;
 
   img {

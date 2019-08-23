@@ -53,7 +53,7 @@ export default {
   top: 0;
   right: 0;
   width: 100%;
-  padding-left: $sidebarWidth;
+  padding-left: $asideWith;
   height: $headerHeight;
   line-height: $headerHeight;
   text-align: center;

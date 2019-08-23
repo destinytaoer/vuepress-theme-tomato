@@ -104,7 +104,7 @@ export default {
 
 .blog {
   padding-top: 5rem;
-  padding-left: $sidebarWidth;
+  padding-left: $asideWith;
 
   .post-list {
     padding: 0;

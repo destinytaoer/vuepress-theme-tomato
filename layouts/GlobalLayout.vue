@@ -108,7 +108,7 @@ html, body {
 
   .aside-wrapper {
     position: fixed;
-    width: $sidebarWidth;
+    width: $asideWith;
     top: 0;
     bottom: 0;
     left: 0;

@@ -160,7 +160,7 @@ export default {
   padding: 5px 0;
   text-align: center;
   margin-top: 50px;
-  padding-left: $sidebarWidth;
+  padding-left: $asideWith;
   border-top: 1px solid #eee;
   box-shadow: 0 -1px 10px 1px $shadowColor;
 

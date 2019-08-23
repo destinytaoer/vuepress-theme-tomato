@@ -92,7 +92,7 @@ export default {
 
 .archive {
   padding-top: 5rem;
-  padding-left: $sidebarWidth;
+  padding-left: $asideWith;
 
   .archive-wrapper {
     @extend $wrapper;
