@@ -12,7 +12,7 @@ module.exports = {
             path: '/',
             layout: 'Blog',
             itemLayout: 'Post',
-            frontmatter: { title: '首页' },
+            frontmatter: { title: '' },
             itemPermalink: '/:year/:month/:slug',
             pagination: {
               lengthPerPage: 2,

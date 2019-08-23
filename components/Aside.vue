@@ -2,14 +2,14 @@
   <aside class="aside">
     <div class="brand-wrapper">
       <div class="avatar-wrapper">
-        <a
-          href="/"
+        <router-link
+          to="/"
           :title="$themeConfig.nickname"
           class="avatar"
         ><img
             :src="$themeConfig.avatar"
             alt="avatar"
-          ></a>
+          ></router-link>
       </div>
       <div class="info">
         <h2 class="nickname">{{$themeConfig.nickname}}</h2>
