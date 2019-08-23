@@ -38,6 +38,17 @@ module.exports = {
               lengthPerPage: 10,
               layout: 'Tag'
             }
+          },
+          {
+            id: 'category',
+            keys: ['category', 'categories'],
+            path: '/category/',
+            frontmatter: { title: '分类' },
+            layout: 'Categories',
+            pagination: {
+              lengthPerPage: 10,
+              layout: 'Category'
+            }
           }
         ]
       }
