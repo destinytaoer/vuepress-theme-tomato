@@ -1,5 +1,5 @@
 <template>
-  <div class="blog">
+  <main class="blog">
     <ul class="post-list">
       <li
         class="post-list-item fade"
@@ -62,7 +62,7 @@
       :current="$pagination.paginationIndex + 1"
       :total="$pagination.length"
     ></Pagination>
-  </div>
+  </main>
 </template>
 
 <script>

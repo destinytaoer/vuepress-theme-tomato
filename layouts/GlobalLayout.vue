@@ -57,7 +57,11 @@ html, body {
     background-image: $bgColor;
   }
 
-  .theme-container, .blog {
+  > main {
+    flex: 1;
+  }
+
+  .theme-container {
     flex: 1;
   }
 }
