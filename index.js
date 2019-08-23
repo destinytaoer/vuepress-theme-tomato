@@ -32,11 +32,12 @@ module.exports = {
             id: 'tag',
             keys: ['tag', 'tags'],
             path: '/tag/',
-            layout: 'Tag',
+            layout: 'Tags',
             frontmatter: { title: '标签云' },
             itemlayout: 'Tag',
             pagination: {
-              perPagePosts: 3
+              perPagePosts: 1,
+              layout: 'Tag'
             }
           }
         ]
