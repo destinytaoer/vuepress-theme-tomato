@@ -39,6 +39,7 @@ export default {
 
 html, body {
   background-image: $bgColor;
+  background-attachment: fixed;
 }
 
 .wrapper {
