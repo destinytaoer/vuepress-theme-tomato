@@ -3,7 +3,7 @@
     class="header"
     :class="{active}"
   >
-    <h1 v-show="active">{{$site.title}}</h1>
+    <h1 v-show="active">{{title}}</h1>
     <SearchBox v-if="$themeConfig.search !== false" />
   </header>
 </template>
@@ -30,6 +30,11 @@ export default {
         document.body.scrollTop ||
         0
       );
+    }
+  },
+  computed: {
+    title() {
+      return this.$page.title || this.$frontmatter.title || this.$siteTitle;
     }
   },
   mounted() {
@@ -62,7 +67,9 @@ export default {
   h1 {
     display: block;
     margin: 0;
-    color: $titleColor;
+    font-size: 20px;
+    line-height: inherit;
+    color: #fff;
   }
 
   .search-box {
