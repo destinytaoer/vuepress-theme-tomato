@@ -6,6 +6,7 @@ module.exports = {
     lastUpdated: '最后更新时间',
     avatar: 'avatar.jpg',
     nickname: 'Tomato',
+    sidebar: 'auto',
     nav: [
       {
         text: '主页',

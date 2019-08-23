@@ -199,9 +199,6 @@ export default {
         path
       );
     }
-  },
-  mounted() {
-    console.log(this.$site.pages);
   }
 };
 
@@ -243,6 +240,10 @@ function flattern(items, res) {
   display: block;
   padding-left: $sidebarWidth;
   padding-bottom: 2rem;
+
+  img {
+    max-width: 100%;
+  }
 }
 
 .page-edit {
