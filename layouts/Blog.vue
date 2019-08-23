@@ -87,6 +87,14 @@ export default {
   components: {
     TagList,
     Pagination
+  },
+  watch: {
+    $title() {
+      let index = this.$pagination.paginationIndex;
+      if (index > 0) {
+        document.title = `Page ${index + 1} | ${this.$siteTitle}`;
+      }
+    }
   }
 };
 </script>
@@ -139,6 +147,10 @@ export default {
 
       > *:first-child {
         margin-top: 0;
+      }
+
+      img {
+        max-width: 100%;
       }
 
       blockquote {
