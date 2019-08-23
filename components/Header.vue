@@ -74,10 +74,14 @@ export default {
       border-color: $accentColor;
     }
 
-    .suggestion {
-      &.focused {
-        a {
-          color: $accentColor;
+    .suggestions {
+      right: 0 !important;
+
+      .suggestion {
+        &.focused {
+          a {
+            color: $accentColor;
+          }
         }
       }
     }
