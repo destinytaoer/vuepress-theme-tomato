@@ -142,13 +142,36 @@ export default {
 <style lang="stylus">
 @import '../styles/variables.styl';
 
+@keyframes spin {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
 .footer {
-  padding: 10px 0;
+  padding: 5px 0;
   text-align: center;
   margin-top: 50px;
   padding-left: $sidebarWidth;
   border-top: 1px solid #eee;
   box-shadow: 0 -1px 10px 1px $shadowColor;
+
+  p {
+    margin: 0;
+  }
+
+  .icon-love {
+    display: inline-block;
+    animation: spin 1s linear infinite;
+  }
 
   span i:first-child {
     margin-right: 1em;
