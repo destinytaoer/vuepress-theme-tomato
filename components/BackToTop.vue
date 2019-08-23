@@ -62,10 +62,12 @@ export default {
 </script>
 
 <style lang='stylus'>
+@import '../styles/variables.styl';
+
 .go-to-top {
   cursor: pointer;
   position: fixed;
-  bottom: 2rem;
+  bottom: 3rem;
   right: 2.5rem;
   // width 2rem
   color: $accentColor;

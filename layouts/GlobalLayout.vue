@@ -9,7 +9,7 @@
     <Header></Header>
     <DefaultGlobalLayout />
     <Footer></Footer>
-    <!-- <BackToTop></BackToTop> -->
+    <BackToTop></BackToTop>
   </div>
 </template>
 
