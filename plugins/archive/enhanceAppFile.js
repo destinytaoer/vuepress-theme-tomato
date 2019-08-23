@@ -14,7 +14,17 @@ class Pagination {
     }
     this._paginationPages = paginationPages;
     this._currentPage = paginationPages[this.paginationIndex];
-    this._matchedPages = pages;
+    this._matchedPages = pages
+      .filter(page => {
+        return page.id === 'post' && page.pid === 'post';
+      })
+      .sort((prev, next) => {
+        let prevDate = prev.frontmatter.date;
+        let nextDate = next.frontmatter.date;
+        const prevTime = new Date(prevDate).getTime();
+        const nextTime = new Date(nextDate).getTime();
+        return prevTime - nextTime > 0 ? -1 : 1;
+      });
   }
   setIndexPage(path) {
     this._indexPage = path;
@@ -54,7 +64,7 @@ class Pagination {
 export default ({ Vue }) => {
   Vue.mixin({
     computed: {
-      $catePagi() {
+      $archPagi() {
         if (
           this.$route.meta.pid === 'archive' &&
           this.$route.meta.id === 'archive'
