@@ -33,10 +33,9 @@ module.exports = {
             keys: ['tag', 'tags'],
             path: '/tag/',
             layout: 'Tags',
-            frontmatter: { title: '标签云' },
-            itemlayout: 'Tag',
+            frontmatter: { title: '标签' },
             pagination: {
-              perPagePosts: 1,
+              lengthPerPage: 10,
               layout: 'Tag'
             }
           }
