@@ -64,6 +64,7 @@ module.exports = {
           return moment(timestamp).fromNow();
         }
       }
-    ]
+    ],
+    [require('./plugins/archive/index'), { lengthPerPage: 20 }]
   ]
 };

@@ -14,7 +14,7 @@ module.exports = {
       },
       {
         text: '归档',
-        link: '/archives/',
+        link: '/archive/',
         icon: 'archives'
       },
       {
