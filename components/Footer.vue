@@ -159,7 +159,7 @@ export default {
 .footer {
   padding: 5px 0;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 2em;
   padding-left: $asideWidth;
   border-top: 1px solid #eee;
   box-shadow: 0 -1px 10px 1px $shadowColor;
