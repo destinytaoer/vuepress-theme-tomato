@@ -29,6 +29,8 @@
     "vuepress": "^1.0.3"
   },
   "dependencies": {
+    "@vssue/api-github-v3": "^1.0.0",
+    "@vssue/vuepress-plugin-vssue": "^1.0.2",
     "lodash": "^4.17.15",
     "moment": "^2.24.0"
   }

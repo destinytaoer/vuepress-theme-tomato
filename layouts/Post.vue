@@ -63,13 +63,15 @@
       </p>
     </div>
 
-    <!-- <Vssue
-      v-if="$frontmatter.comments"
-      :title="$frontmatter.title"
-      :options="{
+    <div class="comments">
+      <Vssue
+        v-if="$frontmatter.comments"
+        :title="$frontmatter.title"
+        :options="{
         labels: ['Vssue', $frontmatter.title]
       }"
-    /> -->
+      />
+    </div>
 
     <slot name="bottom" />
   </div>
@@ -296,6 +298,19 @@ function flattern(items, res) {
 
   .next {
     float: right;
+  }
+}
+
+.comments {
+  @extend $wrapper;
+
+  .vssue :not(.vssue-comment-content) a {
+    color: $accentColor;
+  }
+
+  .vssue .vssue-button:not(:disabled).vssue-button-primary {
+    color: $accentColor;
+    border-color: $accentColor;
   }
 }
 
