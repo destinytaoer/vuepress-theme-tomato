@@ -4,9 +4,6 @@
     class="wrapper"
     :class="pageClasses"
   >
-    <div class="aside-wrapper">
-      <Aside></Aside>
-    </div>
     <Sidebar :items="sidebarItems"></Sidebar>
     <Header></Header>
     <main class="content-wrapper">
@@ -21,7 +18,6 @@
 import GlobalLayout from "@app/components/GlobalLayout.vue";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Aside from "../components/Aside";
 import BackToTop from "../components/BackToTop";
 import Sidebar from "@parent-theme/components/Sidebar.vue";
 import { resolveSidebarItems } from "@parent-theme/util";
@@ -31,7 +27,6 @@ export default {
     DefaultGlobalLayout: GlobalLayout,
     Header,
     Footer,
-    Aside,
     BackToTop,
     Sidebar
   },
@@ -41,8 +36,7 @@ export default {
       return (
         this.$page.id === "post" &&
         frontmatter.sidebar !== false &&
-        this.sidebarItems.length &&
-        this.sidebarItems[0].children.length
+        this.sidebarItems.length
       );
     },
     sidebarItems() {
@@ -107,11 +101,12 @@ html, body {
     }
   }
 
-  .sidebar {
+  > .sidebar {
     left: auto;
     right: 0;
     bottom: auto;
     width: $sidebarWidth;
+    background: none;
 
     a.sidebar-link:hover {
       color: $accentColor;
@@ -121,17 +116,6 @@ html, body {
       color: $accentColor;
       border-left-color: $accentColor;
     }
-  }
-
-  > .aside-wrapper {
-    position: fixed;
-    width: $asideWidth;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    min-height: 100%;
-    z-index: 50;
-    background-image: $bgColor;
   }
 
   > .content-wrapper {
@@ -144,10 +128,6 @@ html, body {
 
 @media (max-width: $MQNarrow) {
   .wrapper {
-    .aside-wrapper {
-      display: none;
-    }
-
     > .content-wrapper {
       padding-left: 0;
     }
@@ -156,7 +136,7 @@ html, body {
 
 @media (max-width: $MQMobile) {
   .wrapper {
-    .sidebar, .aside-wrapper {
+    > .sidebar {
       display: none;
     }
 
@@ -169,7 +149,7 @@ html, body {
 
 @media (min-width: $MQMobile) {
   .wrapper.no-sidebar {
-    .sidebar {
+    > .sidebar {
       display: none;
     }
 
