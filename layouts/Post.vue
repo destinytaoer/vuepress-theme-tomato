@@ -4,7 +4,10 @@
 
     <Content />
 
-    <footer class="page-edit">
+    <footer
+      v-if="isPost"
+      class="page-edit"
+    >
       <div
         class="edit-link"
         v-if="editLink"
@@ -28,7 +31,7 @@
 
     <div
       class="page-nav"
-      v-if="prev || next"
+      v-if="isPost &&(prev || next)"
     >
       <p class="inner">
         <span
@@ -83,6 +86,9 @@ import moment from "moment";
 
 export default {
   computed: {
+    isPost() {
+      return this.$page.id === "post" && this.$page.pid === "post";
+    },
     $posts() {
       const pages = this.$site.pages;
       const pageFilter = p => p.id === "post";
