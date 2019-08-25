@@ -54,7 +54,7 @@ export default {
 <style lang="stylus" scoped>
 @import '../styles/variables.styl';
 
-$height = 80px;
+$height = 3.5em;
 $borderColor = #ccc;
 
 .post-list-compact {
@@ -62,6 +62,7 @@ $borderColor = #ccc;
   margin: 0;
   padding: 0;
   padding-bottom: 2rem;
+  font-size: 20px;
 
   li:last-child {
     .post-item {
@@ -72,9 +73,9 @@ $borderColor = #ccc;
   .post-item {
     display: flex;
     color: $titleColor;
-    padding: 0 20px;
+    align-items: center;
+    padding: 0 1em;
     line-height: $height;
-    // box-shadow: 0 1px 10px 1px #ccc;
     border: 1px solid $borderColor;
     border-bottom: none;
 
@@ -88,11 +89,13 @@ $borderColor = #ccc;
 
     .post-time {
       .icon {
-        font-size: 20px;
+        font-size: 1em;
         vertical-align: top;
       }
 
       time {
+        font-size: 0.9em;
+        font-weight: 400;
         vertical-align: top;
       }
     }
@@ -100,11 +103,15 @@ $borderColor = #ccc;
     .post-title {
       flex: 1;
       margin: 0 1em;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
 
       h4 {
         position: relative;
         display: inline-block;
         margin: 0;
+        font-size: 1em;
 
         &::after {
           content: '';
@@ -125,10 +132,32 @@ $borderColor = #ccc;
         }
       }
     }
+  }
+}
+
+@media (max-width: $MQNarrow) {
+  .post-list-compact {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: $MQMobile) {
+  .post-list-compact {
+    font-size: 16px;
+
+    .post-item {
+      padding: 0 0.5em;
+    }
 
     .tag-list {
-      line-height: $height;
+      display: none;
     }
+  }
+}
+
+@media (max-width: $MQMobileNarrow) {
+  .post-list-compact {
+    font-size: 14px;
   }
 }
 </style>
