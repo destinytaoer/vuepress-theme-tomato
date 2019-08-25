@@ -64,7 +64,19 @@ export default {
     }
   },
   mounted() {
-    console.log(this.sidebarItems);
+    console.log(
+      `\n %c ${this.$site.title} %c ${this.$site.description} \n`,
+      "color:#FFFFFB;background:#59aceb;padding:5px 0;border-radius:.5rem 0 0 .5rem;",
+      "background: #efefef;padding:7px 0 5px;border-radius:0 .5rem .5rem 0;"
+    );
+    console.log(
+      `%c页面加载消耗了 ${(
+        Math.round(performance.now() * 100) /
+        100 /
+        1000
+      ).toFixed(2)}s`,
+      "background: #fff;color: #333;text-shadow: 0 0 2px #eee, 0 0 3px #eee, 0 0 3px #eee, 0 0 2px #eee, 0 0 3px #eee;"
+    );
   }
 };
 </script>
