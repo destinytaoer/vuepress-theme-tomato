@@ -90,21 +90,22 @@ export default {
 
 .archive {
   @extend $wrapper;
+  font-size: 20px;
 
   .year-wrapper {
-    line-height: 25px;
-    font-size: 20px;
+    font-size: 1em;
 
     .year {
-      padding-bottom: 10px;
+      padding-bottom: 0.5em;
       border-bottom: 1px solid $borderColor;
     }
 
     .icon {
-      font-size: 25px;
+      font-size: 1.2em;
     }
 
     span {
+      font-size: 1em;
       vertical-align: top;
     }
   }
@@ -113,13 +114,25 @@ export default {
     padding-left: 1em;
 
     .month {
-      padding: 10px 0;
-      font-size: 18px;
+      padding: 0.5em 0;
+      font-size: 0.9em;
     }
 
     .icon {
-      font-size: 20px;
+      font-size: 1em;
     }
+  }
+}
+
+@media (max-width: $MQNarrow) {
+  .archive {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: $MQMobile) {
+  .archive {
+    font-size: 16px;
   }
 }
 </style>
