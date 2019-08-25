@@ -34,7 +34,7 @@ export default {
     shouldShowSidebar() {
       const { frontmatter } = this.$page;
       return (
-        this.$page.id === "post" &&
+        this.$page.headers &&
         frontmatter.sidebar !== false &&
         this.sidebarItems.length
       );
