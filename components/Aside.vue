@@ -16,18 +16,27 @@
         <h3 class="descr">{{$site.description}}</h3>
       </div>
     </div>
-    <my-nav :navs="navs"></my-nav>
-    <Contact></Contact>
+    <my-nav></my-nav>
+    <Sidebar :items="sidebarItems">
+      <Contact slot="top"></Contact>
+    </Sidebar>
   </aside>
 </template>
 <script>
 import MyNav from "../components/Nav";
 import Contact from "../components/Contact";
+import Sidebar from "@parent-theme/components/Sidebar.vue";
+import { resolveSidebarItems } from "@parent-theme/util";
 export default {
-  components: { MyNav, Contact },
+  components: { MyNav, Contact, Sidebar },
   computed: {
-    navs() {
-      return this.$themeConfig.nav || [];
+    sidebarItems() {
+      return resolveSidebarItems(
+        this.$page,
+        this.$page.regularPath,
+        this.$site,
+        this.$localePath
+      );
     }
   }
 };
@@ -40,8 +49,12 @@ export default {
   height: 100%;
   overflow: hidden;
 
-  .avatar-wrapper {
+  .brand-wrapper {
     margin-top: $headerHeight;
+    border-bottom: 1px solid $borderColor;
+  }
+
+  .avatar-wrapper {
     padding: 10px 0;
 
     .avatar {
@@ -75,6 +88,49 @@ export default {
       white-space: nowrap;
       text-overflow: ellipsis;
       margin-bottom: 2em;
+    }
+  }
+
+  > .sidebar {
+    position: static;
+    transform: none;
+    background: none;
+    width: $asideWidth;
+
+    .nav-links, .sidebar-links {
+      display: none;
+    }
+
+    .sidebar-links {
+      a.sidebar-link.active {
+        color: $accentColor;
+        border-left-color: $accentColor;
+      }
+
+      a.sidebar-link:hover {
+        color: $accentColor;
+      }
+    }
+  }
+}
+
+@media (max-width: $MQMobile) {
+  .aside {
+    .brand-wrapper, .contact {
+      display: none;
+    }
+
+    > .sidebar {
+      width: $asideWidth;
+      padding-top: 0;
+
+      .sidebar-links {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+      }
     }
   }
 }
