@@ -15,7 +15,7 @@ module.exports = {
             frontmatter: { title: '' },
             itemPermalink: '/:year/:month/:slug',
             pagination: {
-              lengthPerPage: 2,
+              lengthPerPage: 5,
               layout: 'Blog',
               sorter: function(prev, next) {
                 let prevDate = prev.frontmatter.update || prev.frontmatter.date;

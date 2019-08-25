@@ -30,11 +30,25 @@ export default {
   },
   watch: {
     $title() {
-      document.title = `${this.$currentCategory.key} | ${this.$siteTitle}`;
+      let index = this.$pagination.paginationIndex;
+      if (index > 0) {
+        document.title = `第 ${index + 1} 页 | ${this.$currentCategory.key}`;
+      } else {
+        document.title = `${this.$currentCategory.key} | ${this.$siteTitle}`;
+      }
     }
   },
-  created() {
-    document.title = `${this.$currentCategory.key} | ${this.$siteTitle}`;
+  mounted() {
+    this.$nextTick(() => {
+      let index = this.$pagination.paginationIndex;
+      if (index > 0) {
+        document.title = `第 ${index + 1} 页 | ${
+          this.$currentCategory.key
+        }  | ${this.$siteTitle}`;
+      } else {
+        document.title = `${this.$currentCategory.key} | ${this.$siteTitle}`;
+      }
+    });
   }
 };
 </script>

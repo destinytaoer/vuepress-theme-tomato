@@ -92,9 +92,21 @@ export default {
     $title() {
       let index = this.$pagination.paginationIndex;
       if (index > 0) {
-        document.title = `Page ${index + 1} | ${this.$siteTitle}`;
+        document.title = `第 ${index + 1} 页 | ${this.$siteTitle}`;
+      } else {
+        document.title = this.$siteTitle;
       }
     }
+  },
+  mounted() {
+    this.$nextTick(() => {
+      let index = this.$pagination.paginationIndex;
+      if (index > 0) {
+        document.title = `第 ${index + 1} 页 | ${this.$siteTitle}`;
+      } else {
+        document.title = this.$siteTitle;
+      }
+    });
   }
 };
 </script>

@@ -28,7 +28,7 @@ module.exports = (options, ctx) => ({
         title = '归档';
       } else {
         path = `/archive/page/${index + 1}/`;
-        title = `Page ${index + 1} | 归档`;
+        title = `第 ${index + 1} 页 | 归档`;
       }
       ctx.addPage({
         permalink: path,
