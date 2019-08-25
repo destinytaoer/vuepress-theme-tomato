@@ -1,6 +1,7 @@
 module.exports = {
   title: 'theme-tomato-demo',
   description: '一款为 Vuepress 打造的博客主题',
+  base: '/vuepress-theme-tomato/',
   theme: require.resolve('../../'),
   themeConfig: {
     lastUpdated: '最后更新时间',
