@@ -32,11 +32,11 @@ export default {
 .tag-list {
   margin: 0;
   padding: 0;
-  font-size: 13px;
+  font-size: 14px;
 
   .tag-list-item {
     display: inline-block;
-    margin-right: 8px;
+    margin-right: 0.5em;
     border-radius: 2px;
 
     &:last-child {
@@ -70,14 +70,36 @@ export default {
 
   .tag-list-link {
     display: block;
-    padding: 0 16px;
-    line-height: 28px;
+    padding: 0 1em;
+    line-height: 2em;
     color: rgb(133, 133, 133);
     transition: all 0.2s ease-in-out;
 
     &:hover {
-      -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.26);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.26);
+    }
+  }
+}
+
+@media (max-width: $MQNarrow) {
+  .tag-list {
+    .tag-list-item {
+      margin-right: 0.3em;
+    }
+
+    .tag-list-link {
+      padding: 0 0.5em;
+    }
+  }
+}
+
+@media (max-width: $MQMobile) {
+  .tag-list {
+    font-size: 12px;
+
+    .tag-list-link {
+      padding: 0 0.5em;
+      line-height: 1.8em;
     }
   }
 }
