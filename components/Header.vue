@@ -53,7 +53,7 @@ export default {
   top: 0;
   right: 0;
   width: 100%;
-  padding-left: $asideWith;
+  padding-left: $asideWidth;
   height: $headerHeight;
   line-height: $headerHeight;
   text-align: center;
@@ -92,6 +92,12 @@ export default {
         }
       }
     }
+  }
+}
+
+@media (max-width: $MQNarrow) {
+  .header {
+    padding-left: 0;
   }
 }
 </style>

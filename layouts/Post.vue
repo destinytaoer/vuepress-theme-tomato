@@ -1,5 +1,5 @@
 <template>
-  <main class="page">
+  <div class="page">
     <slot name="top" />
 
     <Content />
@@ -69,7 +69,7 @@
     /> -->
 
     <slot name="bottom" />
-  </main>
+  </div>
 </template>
 
 <script>
@@ -237,9 +237,7 @@ function flattern(items, res) {
 @import '../styles/variables.styl';
 
 .page {
-  display: block;
-  padding-left: $asideWith;
-  padding-bottom: 2rem;
+  padding-left: 0;
 
   img {
     max-width: 100%;

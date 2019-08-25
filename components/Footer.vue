@@ -160,7 +160,7 @@ export default {
   padding: 5px 0;
   text-align: center;
   margin-top: 50px;
-  padding-left: $asideWith;
+  padding-left: $asideWidth;
   border-top: 1px solid #eee;
   box-shadow: 0 -1px 10px 1px $shadowColor;
 
@@ -178,9 +178,10 @@ export default {
   }
 }
 
-@media (max-width: $MQMobile) {
+@media (max-width: $MQNarrow) {
   .footer {
     font-size: 12px;
+    padding-left: 0;
   }
 }
 </style>

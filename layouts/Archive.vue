@@ -1,41 +1,39 @@
 <template>
-  <main class="archive">
-    <div class="archive-wrapper">
-      <div
-        class="year-wrapper"
-        v-for="(yearPosts, index) in postList"
-        :key="index"
-      >
-        <div class="year">
-          <i class="icon icon-folder"></i>
-          <span>{{yearPosts[0]}}</span>
-        </div>
-        <template v-if="splitBy ==='M'">
-          <div
-            class="month-wrapper"
-            v-for="(monthPosts, index) in yearPosts[1]"
-            :key="index"
-          >
-            <div class="month">
-              <i class="icon icon-list1"></i>
-              <span>{{monthPosts[0]}}月</span>
-            </div>
-            <PostList :data-source="monthPosts[1]"></PostList>
-          </div>
-        </template>
-        <PostList
-          v-else
-          :data-source="yearPosts[1]"
-        ></PostList>
+  <div class="archive">
+    <div
+      class="year-wrapper"
+      v-for="(yearPosts, index) in postList"
+      :key="index"
+    >
+      <div class="year">
+        <i class="icon icon-folder"></i>
+        <span>{{yearPosts[0]}}</span>
       </div>
-      <Pagination
-        v-if="$archPagi.length > 1"
-        :current="$archPagi.paginationIndex + 1"
-        :total="$archPagi.length"
-        :base-path="`/archive/`"
-      ></Pagination>
+      <template v-if="splitBy ==='M'">
+        <div
+          class="month-wrapper"
+          v-for="(monthPosts, index) in yearPosts[1]"
+          :key="index"
+        >
+          <div class="month">
+            <i class="icon icon-list1"></i>
+            <span>{{monthPosts[0]}}月</span>
+          </div>
+          <PostList :data-source="monthPosts[1]"></PostList>
+        </div>
+      </template>
+      <PostList
+        v-else
+        :data-source="yearPosts[1]"
+      ></PostList>
     </div>
-  </main>
+    <Pagination
+      v-if="$archPagi.length > 1"
+      :current="$archPagi.paginationIndex + 1"
+      :total="$archPagi.length"
+      :base-path="`/archive/`"
+    ></Pagination>
+  </div>
 </template>
 <script>
 import _ from "lodash";
@@ -91,42 +89,36 @@ export default {
 @import '../styles/wrapper.styl';
 
 .archive {
-  padding-top: 5rem;
-  padding-left: $asideWith;
+  @extend $wrapper;
 
-  .archive-wrapper {
-    @extend $wrapper;
-    padding: 0;
+  .year-wrapper {
+    line-height: 25px;
+    font-size: 20px;
 
-    .year-wrapper {
-      line-height: 25px;
-      font-size: 20px;
-
-      .year {
-        padding-bottom: 10px;
-        border-bottom: 1px solid $borderColor;
-      }
-
-      .icon {
-        font-size: 25px;
-      }
-
-      span {
-        vertical-align: top;
-      }
+    .year {
+      padding-bottom: 10px;
+      border-bottom: 1px solid $borderColor;
     }
 
-    .month-wrapper {
-      padding-left: 1em;
+    .icon {
+      font-size: 25px;
+    }
 
-      .month {
-        padding: 10px 0;
-        font-size: 18px;
-      }
+    span {
+      vertical-align: top;
+    }
+  }
 
-      .icon {
-        font-size: 20px;
-      }
+  .month-wrapper {
+    padding-left: 1em;
+
+    .month {
+      padding: 10px 0;
+      font-size: 18px;
+    }
+
+    .icon {
+      font-size: 20px;
     }
   }
 }

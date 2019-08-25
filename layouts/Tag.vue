@@ -1,19 +1,17 @@
 <template>
-  <main class="tag">
-    <div class="tag-wrapper">
-      <p class="tag-title">
-        <i class="icon icon-tag"></i>
-        关于 <span class="tag-name">{{$currentTag.key}}</span> 共 {{length}} 篇文章
-      </p>
-      <PostList :data-source="post"></PostList>
-      <Pagination
-        v-if="$pagination.length > 1"
-        :current="$pagination.paginationIndex + 1"
-        :total="$pagination.length"
-        :base-path="`/tag/${$currentTag.key}/`"
-      ></Pagination>
-    </div>
-  </main>
+  <div class="tag">
+    <p class="tag-title">
+      <i class="icon icon-tag"></i>
+      关于 <span class="tag-name">{{$currentTag.key}}</span> 共 {{length}} 篇文章
+    </p>
+    <PostList :data-source="post"></PostList>
+    <Pagination
+      v-if="$pagination.length > 1"
+      :current="$pagination.paginationIndex + 1"
+      :total="$pagination.length"
+      :base-path="`/tag/${$currentTag.key}/`"
+    ></Pagination>
+  </div>
 </template>
 <script>
 import PostList from "../components/PostList";
@@ -58,19 +56,13 @@ export default {
 @import '../styles/variables.styl';
 
 .tag {
-  padding-top: 5rem;
-  padding-left: $asideWith;
+  @extend $wrapper;
+  font-size: 16px;
 
-  .tag-wrapper {
-    @extend $wrapper;
-    padding: 0;
-    font-size: 16px;
-
-    .tag-name {
-      font-size: 20px;
-      padding: 0 10px;
-      color: rgb(100, 100, 100);
-    }
+  .tag-name {
+    font-size: 20px;
+    padding: 0 10px;
+    color: rgb(100, 100, 100);
   }
 }
 </style>

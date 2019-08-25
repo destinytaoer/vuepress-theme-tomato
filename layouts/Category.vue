@@ -1,19 +1,17 @@
 <template>
-  <main class="category">
-    <div class="category-wrapper">
-      <p class="category-title">
-        <i class="icon icon-category"></i>
-        <span class="category-name">{{$currentCategory.key}}</span> 共 {{length}} 篇文章
-      </p>
-      <PostList :data-source="post"></PostList>
-      <Pagination
-        v-if="$pagination.length > 1"
-        :current="$pagination.paginationIndex + 1"
-        :total="$pagination.length"
-        :base-path="`/category/${$currentCategory.key}/`"
-      ></Pagination>
-    </div>
-  </main>
+  <div class="category">
+    <p class="category-title">
+      <i class="icon icon-category"></i>
+      <span class="category-name">{{$currentCategory.key}}</span> 共 {{length}} 篇文章
+    </p>
+    <PostList :data-source="post"></PostList>
+    <Pagination
+      v-if="$pagination.length > 1"
+      :current="$pagination.paginationIndex + 1"
+      :total="$pagination.length"
+      :base-path="`/category/${$currentCategory.key}/`"
+    ></Pagination>
+  </div>
 </template>
 <script>
 import PostList from "../components/PostList";
@@ -58,23 +56,17 @@ export default {
 @import '../styles/variables.styl';
 
 .category {
-  padding-top: 5rem;
-  padding-left: $asideWith;
+  @extend $wrapper;
+  font-size: 16px;
 
-  .category-wrapper {
-    @extend $wrapper;
-    padding: 0;
-    font-size: 16px;
+  .icon {
+    font-size: 20px;
+  }
 
-    .icon {
-      font-size: 20px;
-    }
-
-    .category-name {
-      font-size: 20px;
-      padding: 0 10px;
-      color: rgb(100, 100, 100);
-    }
+  .category-name {
+    font-size: 20px;
+    padding: 0 10px;
+    color: rgb(100, 100, 100);
   }
 }
 </style>

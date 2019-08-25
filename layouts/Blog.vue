@@ -1,5 +1,5 @@
 <template>
-  <main class="blog">
+  <div class="blog">
     <ul class="post-list">
       <li
         class="post-list-item fade"
@@ -62,7 +62,7 @@
       :current="$pagination.paginationIndex + 1"
       :total="$pagination.length"
     ></Pagination>
-  </main>
+  </div>
 </template>
 
 <script>
@@ -115,9 +115,6 @@ export default {
 @import '../styles/variables.styl';
 
 .blog {
-  padding-top: 5rem;
-  padding-left: $asideWith;
-
   .post-list {
     padding: 0;
     list-style: none;

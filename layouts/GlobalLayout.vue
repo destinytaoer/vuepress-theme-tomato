@@ -9,7 +9,9 @@
     </div>
     <Sidebar :items="sidebarItems"></Sidebar>
     <Header></Header>
-    <DefaultGlobalLayout />
+    <main class="content-wrapper">
+      <DefaultGlobalLayout />
+    </main>
     <Footer></Footer>
     <BackToTop></BackToTop>
   </div>
@@ -96,6 +98,8 @@ html, body {
   flex-direction: column;
   justify-content: flex-end;
   min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
 
   &.sidebar-open {
     .sidebar-mask {
@@ -107,6 +111,7 @@ html, body {
     left: auto;
     right: 0;
     bottom: auto;
+    width: $sidebarWidth;
 
     a.sidebar-link:hover {
       color: $accentColor;
@@ -118,9 +123,9 @@ html, body {
     }
   }
 
-  .aside-wrapper {
+  > .aside-wrapper {
     position: fixed;
-    width: $asideWith;
+    width: $asideWidth;
     top: 0;
     bottom: 0;
     left: 0;
@@ -129,13 +134,11 @@ html, body {
     background-image: $bgColor;
   }
 
-  > main {
+  > .content-wrapper {
     flex: 1;
+    padding-top: 5em;
     padding-right: $sidebarWidth;
-  }
-
-  .theme-container {
-    flex: 1;
+    padding-left: $asideWidth;
   }
 }
 
@@ -145,8 +148,33 @@ html, body {
       display: none;
     }
 
-    > main {
+    > .content-wrapper {
       padding-right: 0;
+    }
+  }
+}
+
+@media (max-width: $MQNarrow) {
+  .wrapper {
+    .aside-wrapper {
+      display: none;
+    }
+
+    > .content-wrapper {
+      padding-left: 0;
+    }
+  }
+}
+
+@media (max-width: $MQMobile) {
+  .wrapper {
+    .sidebar, .aside-wrapper {
+      display: none;
+    }
+
+    > .content-wrapper {
+      padding-right: 0;
+      padding-left: 0;
     }
   }
 }
