@@ -17,7 +17,7 @@
             :key="index"
           >
             <div class="month">
-              <i class="icon icon-list"></i>
+              <i class="icon icon-list1"></i>
               <span>{{monthPosts[0]}}月</span>
             </div>
             <PostList :data-source="monthPosts[1]"></PostList>
@@ -122,6 +122,10 @@ export default {
       .month {
         padding: 10px 0;
         font-size: 18px;
+      }
+
+      .icon {
+        font-size: 20px;
       }
     }
   }
