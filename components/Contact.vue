@@ -34,7 +34,8 @@ export default {
 .contact {
   display: flex;
   justify-content: space-around;
-  margin-top: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid $borderColor;
 
   .contact-item {
     &:hover {
@@ -48,16 +49,12 @@ export default {
       display: block;
       padding: 5px;
       font-size: 25px;
+      line-height: 25px;
       color: $color;
       width: 35px;
       height: 35px;
       vertical-align: top;
       transition: all 0.2s ease;
-
-      .icon {
-        display: inline-block;
-        vertical-align: top;
-      }
     }
   }
 }
