@@ -142,18 +142,6 @@ html, body {
   }
 }
 
-@media (min-width: ($MQMobile + 1px)) {
-  .wrapper.no-sidebar {
-    .sidebar {
-      display: none;
-    }
-
-    > .content-wrapper {
-      padding-right: 0;
-    }
-  }
-}
-
 @media (max-width: $MQNarrow) {
   .wrapper {
     .aside-wrapper {
@@ -175,6 +163,18 @@ html, body {
     > .content-wrapper {
       padding-right: 0;
       padding-left: 0;
+    }
+  }
+}
+
+@media (min-width: $MQMobile) {
+  .wrapper.no-sidebar {
+    .sidebar {
+      display: none;
+    }
+
+    > .content-wrapper {
+      padding-right: 0;
     }
   }
 }
