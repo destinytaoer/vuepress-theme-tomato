@@ -1,10 +1,10 @@
 ---
 title: VuePress 入门
 layout: post
-category: 前端资源
+category: 技术文档
 tags:
   - VuePress
-  - 搭建博客
+  - blog
 date: 2019-02-14 11:26
 update: 2019-02-21 20:12
 comments: true
@@ -216,7 +216,13 @@ git push --set-upstream origin master # 所有代码推送到远程仓库的 mas
 单独将打包好的文件上传到 gh-pages 分支上，自动会生成 GitHub Pages，在仓库设置里可以查看到相应地址。
 
 ```bash
-git subtree push --prefix dist origin gh-pages # 只将 dist 上传到 gh-pages 分支
+cd docs/.vuepress/dist # 进入打包后的文件夹
+
+git init
+git add -A
+git commit -m 'update blog'
+
+git push -f git@github.com:[username]/[repo].git master:gh-pages
 ```
 
 注意，最好配置一个 .gitignore 文件，去掉不需要上传的文件和文件夹。
@@ -236,18 +242,18 @@ set -e
 # 生成静态文件
 yarn build
 
-# 提交到历史区，$1 为运行 sh 时的第一个参数
+cd docs/.vuepress/dist # 进入打包后的文件夹
+
+# 提交到历史区
+git init
 git add -A
-git commit -m $1
+git commit -m 'update blog'
 
-# 提交到 master 分支
-git push origin master
+# 提交到 gh-pages 分支
+git push -f git@github.com:[username]/[repo].git master:gh-pages
 
-# 将 dist 文件提交到 gh-pages 分支
-git subtree push --prefix dist origin gh-pages
-
-# 退出命令
-exit 0
+# 回到原目录
+cd -
 ```
 
 然后在 package.json 文件中配置脚本：
@@ -264,14 +270,13 @@ exit 0
 后续部署直接使用命令：
 
 ```bash
-yarn deploy "updatedBlog"
+yarn run deploy
 ```
+这个命令需要在 git bash 中使用，不能在 Windows 的命令行中使用。
 
-需要注意的是，后面带的消息，不能使用空格隔开（本人对 shell 脚本不熟悉，查找了也没明白，希望有大神指点一下），使用了空格，就会导致只提交了空格前的消息
-
-另外，这个命令需要在 git bash 中使用，不能在 Windows 的命令行中使用。
+::: warning
+只进行发布 GitHub Pages，master 分支还是需要自行手动提交
+:::
 
 ## 5. 后续
-太喜欢 VuePress 了，因为后面都托管给 Vue 了，所以速度飞快。
-
-后续会出一个如何修改默认主题的文章。
+太喜欢 VuePress 了，后续会出一个如何修改默认主题的文章。

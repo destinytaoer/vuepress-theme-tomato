@@ -6,6 +6,7 @@ module.exports = {
   theme: require.resolve('../../'),
   themeConfig: {
     lastUpdated: '最后更新时间',
+    vssue: true,
     avatar: 'avatar.jpg',
     nickname: 'Tomato',
     motto: '生命的意义不仅是活着，而是我们给别人的生命带来了何种不同。',
@@ -30,7 +31,7 @@ module.exports = {
         text: '分类',
         link: '/category/',
         icon: 'category'
-      },
+      }
       // {
       //   text: '前端手册',
       //   items: [
@@ -52,31 +53,34 @@ module.exports = {
       //     }
       //   ]
       // },
-      { text: '语雀', link: 'https://www.yuque.com/destinytaoer/' },
-      { text: '关于我', link: '/about/' }
     ],
     contact: [
       {
         icon: 'email',
         text: 'email',
-        link: 'mailto:1848765519@qq.com'
+        link: '#'
       },
       {
         icon: 'github',
         text: 'Github',
-        link: 'https://github.com/destinytaoer'
+        link: 'https://github.com/destinytaoer/vuepress-theme-tomato'
       },
       {
         icon: 'csdn',
         text: 'CSDN',
-        link: 'https://blog.csdn.net/destinytaoer'
+        link: '#'
       },
       {
         icon: 'wechat',
         text: 'WeChat',
-        link: 'weixin.jpg'
+        link: '#'
       }
     ]
+  },
+  markdown: {
+    extendMarkdown: md => {
+      md.use(require('markdown-it-task-lists'), { enabled: true });
+    }
   },
   plugins: [
     [
