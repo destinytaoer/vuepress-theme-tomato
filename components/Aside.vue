@@ -84,9 +84,7 @@ export default {
     .descr {
       font-size: 14px;
       width: 100%;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
+      padding: 0 1.5em;
       margin-bottom: 2em;
     }
   }
