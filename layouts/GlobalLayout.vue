@@ -3,9 +3,19 @@
     id="global-layout"
     class="wrapper"
     :class="pageClasses"
+    @touchstart="onTouchStart"
+    @touchend="onTouchEnd"
   >
+    <div
+      class="sidebar-mask"
+      @click="toggleAside(false)"
+    ></div>
     <Sidebar :items="sidebarItems"></Sidebar>
-    <Header></Header>
+    <Header
+      @toggle-aside="toggleAside"
+      :has-aside="isSidebarOpen"
+      :class="{'has-aside': isSidebarOpen}"
+    ></Header>
     <main class="content-wrapper">
       <DefaultGlobalLayout />
     </main>
@@ -30,6 +40,11 @@ export default {
     BackToTop,
     Sidebar
   },
+  data() {
+    return {
+      isSidebarOpen: false
+    };
+  },
   computed: {
     shouldShowSidebar() {
       const { frontmatter } = this.$page;
@@ -51,15 +66,41 @@ export default {
       const userPageClass = this.$page.frontmatter.pageClass;
       return [
         {
-          "no-navbar": !this.shouldShowNavbar,
-          "sidebar-open": this.isSidebarOpen,
+          "aside-open": this.isSidebarOpen,
           "no-sidebar": !this.shouldShowSidebar
         },
         userPageClass
       ];
     }
   },
+  methods: {
+    toggleAside(to) {
+      console.log(to);
+      this.isSidebarOpen = typeof to === "boolean" ? to : !this.isSidebarOpen;
+    },
+    onTouchStart(e) {
+      this.touchStart = {
+        x: e.changedTouches[0].clientX,
+        y: e.changedTouches[0].clientY
+      };
+    },
+
+    onTouchEnd(e) {
+      const dx = e.changedTouches[0].clientX - this.touchStart.x;
+      const dy = e.changedTouches[0].clientY - this.touchStart.y;
+      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+        if (dx > 0 && this.touchStart.x <= 80) {
+          this.toggleAside(true);
+        } else {
+          this.toggleAside(false);
+        }
+      }
+    }
+  },
   mounted() {
+    this.$router.afterEach(() => {
+      this.isSidebarOpen = false;
+    });
     console.log(
       `\n %c ${this.$site.title} %c ${this.$site.description} \n`,
       "color:#FFFFFB;background:#59aceb;padding:5px 0;border-radius:.5rem 0 0 .5rem;",
@@ -95,7 +136,7 @@ html, body {
   width: 100%;
   overflow: hidden;
 
-  &.sidebar-open {
+  &.aside-open {
     .sidebar-mask {
       display: block;
     }

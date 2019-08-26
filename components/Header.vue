@@ -1,8 +1,5 @@
 <template>
-  <header
-    class="header"
-    :class="{'has-aside': hasAside}"
-  >
+  <header class="header">
     <div class="aside-wrapper">
       <Aside></Aside>
     </div>
@@ -36,14 +33,14 @@ export default {
     SearchBox,
     Aside
   },
-  data() {
-    return {
-      hasAside: false
-    };
+  props: {
+    hasAside: {
+      type: Boolean
+    }
   },
   methods: {
     toggleAside() {
-      this.hasAside = !this.hasAside;
+      this.$emit("toggle-aside", !this.hasAside);
     }
   },
   computed: {
