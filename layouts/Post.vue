@@ -3,7 +3,9 @@
     <slot name="top" />
 
     <Content />
-
+    <div class="quote-wrapper">
+      <Quote>{{$themeConfig.motto}}</Quote>
+    </div>
     <footer
       v-if="isPost"
       class="page-edit"
@@ -299,6 +301,11 @@ function flattern(items, res) {
   .next {
     float: right;
   }
+}
+
+.quote-wrapper {
+  @extend $wrapper;
+  padding-top: 0;
 }
 
 .comments {
