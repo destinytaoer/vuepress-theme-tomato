@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/destinytaoer/vuepress-theme-tomato" target="_blank" rel="noopener noreferrer">
-    <img width="100" src="./img/logo.png" alt="Vue Wheel logo">
+    <img width="100" src="./img/tomato.png" alt="tomato">
   </a>
 </p>
 
@@ -21,13 +21,13 @@
 
 <h2 align="center">vuepress-theme-tomato -- 一款 Vuepress 的简约博客主题</h2>
 
-查看 [demo](https://destinytaoer.github.io/vuepress-theme-tomato/)
+查看 [demo](https://destinytaoer.github.io/vuepress-theme-tomato/)。如果你喜欢这款主题，请不要吝啬你的 star~👀
 
 ## 预览
 
-![blog img](./img/blog1)
-![blog img](./img/blog2)
-![blog img](./img/blog3)
+![blog img](./img/blog1.png)
+![blog img](./img/blog2.png)
+![blog img](./img/blog3.png)
 
 ## 安装
 
@@ -98,8 +98,10 @@ module.exports = {
 - [x] Header
   - [x] SearchBox 使用默认主题组件
 - [x] Footer
+  - [x] 不蒜子统计
 - [x] Layout
 - [x] Post
+  - [ ] 使用 leanCloud 添加文章阅读量统计
 - [x] Aside
 - [x] SideBar 使用默认主题组件
 - [x] Nav 竖向显示的导航
@@ -134,11 +136,11 @@ module.exports = {
   <img src="https://avatars3.githubusercontent.com/u/27852774?s=460&v=4" width="40" />
 </a>
 
-## 交流与打赏
-交流：
-![交流](./img/wechat.jpg)
-打赏：
-![打赏](./img/wechat.png)
+## 交流
+
+扫描二维码添加微信：
+
+<img width="180" src="./img/wechat.jpg" alt="交流">
 
 ## License
 
