@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-tomato",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Vuepress 的一款博客主题",
   "main": "index.js",
   "scripts": {
