@@ -64,18 +64,6 @@ module.exports = {
           return moment(timestamp).fromNow();
         }
       }
-    ],
-    [require('./plugins/archive/index'), { lengthPerPage: 20 }],
-    [
-      '@vssue/vuepress-plugin-vssue',
-      {
-        platform: 'github',
-
-        owner: 'destinytaoer',
-        repo: 'vuepress-theme-tomato',
-        clientId: '3699c72e5af9abb3b743',
-        clientSecret: '2d07802d48271a4424ce092cc7f97b45486d6421'
-      }
     ]
   ]
 };

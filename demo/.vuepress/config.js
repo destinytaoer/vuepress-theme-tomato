@@ -2,11 +2,13 @@ module.exports = {
   title: 'theme-tomato-demo',
   description: '一款为 Vuepress 打造的博客主题',
   base: '/vuepress-theme-tomato/',
+  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   theme: require.resolve('../../'),
   themeConfig: {
     lastUpdated: '最后更新时间',
     avatar: 'avatar.jpg',
     nickname: 'Tomato',
+    motto: '生命的意义不仅是活着，而是我们给别人的生命带来了何种不同。',
     sidebar: 'auto',
     nav: [
       {
@@ -75,5 +77,19 @@ module.exports = {
         link: 'weixin.jpg'
       }
     ]
-  }
+  },
+  plugins: [
+    [
+      '@vssue/vuepress-plugin-vssue',
+      {
+        platform: 'github',
+
+        owner: 'destinytaoer',
+        repo: 'vuepress-theme-tomato',
+        clientId: '3699c72e5af9abb3b743',
+        clientSecret: '2d07802d48271a4424ce092cc7f97b45486d6421'
+      }
+    ],
+    [require('../../plugins/archive/index'), { lengthPerPage: 20 }]
+  ]
 };
