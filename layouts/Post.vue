@@ -3,7 +3,10 @@
     <slot name="top" />
 
     <Content />
-    <div class="quote-wrapper">
+    <div
+      v-if="!$frontmatter.closeMotto"
+      class="quote-wrapper"
+    >
       <Quote>{{$themeConfig.motto}}</Quote>
     </div>
     <footer
