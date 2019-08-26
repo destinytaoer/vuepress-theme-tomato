@@ -2,6 +2,11 @@ module.exports = {
   title: 'theme-tomato-demo',
   description: '一款为 Vuepress 打造的博客主题',
   base: '/vuepress-theme-tomato/',
+  locales: {
+    '/': {
+      lang: 'zh-CN' // 将会被设置为 <html> 的 lang 属性
+    }
+  },
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   theme: require.resolve('../../'),
   themeConfig: {
