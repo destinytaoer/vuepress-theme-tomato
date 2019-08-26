@@ -11,6 +11,7 @@ export default {
     component() {
       if (this.$currentTag) return "Tag";
       if (this.$currentCategory) return "Category";
+      if (this.$frontmatter.layout) return this.$frontmatter.layout;
       return "Post";
     }
   }
