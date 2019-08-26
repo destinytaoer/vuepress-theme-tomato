@@ -56,6 +56,8 @@ module.exports = {
 - contact：左侧边栏下面的联系方式图标
   - Array{icon, text, link}
 - motto：每篇文章底部的格言区域
+  - 在 frontmatter 中设置 closeMotto 为 true 关闭底部格言
+  - 你可以直接在 md 文件中使用 Quote 组件
 
 ### Vssue
 
