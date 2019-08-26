@@ -161,7 +161,7 @@ html, body {
 
   > .content-wrapper {
     flex: 1;
-    padding-top: 5em;
+    padding-top: $headerHeight;
     padding-right: $sidebarWidth;
     padding-left: $asideWidth;
   }

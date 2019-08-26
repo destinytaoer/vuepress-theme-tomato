@@ -247,7 +247,7 @@ function flattern(items, res) {
 @import '../styles/variables.styl';
 
 .page {
-  padding-left: 0;
+  padding-left: 0 !important;
 
   img {
     max-width: 100%;
