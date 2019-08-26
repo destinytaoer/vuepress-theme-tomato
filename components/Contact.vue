@@ -35,12 +35,13 @@ export default {
   display: flex;
   justify-content: space-around;
   padding: 10px 0;
+  overflow: hidden;
   border-bottom: 1px solid $borderColor;
 
   .contact-item {
     &:hover {
       .contact-link {
-        transform: translateY(5px) scale(1.5);
+        transform: translateY(2px) scale(1.2);
         color: #000;
       }
     }
