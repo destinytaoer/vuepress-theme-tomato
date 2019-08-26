@@ -13,9 +13,8 @@
           exact
         >
           <i
-            v-if="nav.icon"
             class="icon"
-            :class="[`icon-${nav.icon}`]"
+            :class="[`icon-${nav.icon || 'article'}`]"
           ></i>{{ nav.text }}
         </router-link>
         <a
