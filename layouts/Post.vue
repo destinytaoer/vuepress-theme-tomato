@@ -70,7 +70,7 @@
 
     <div class="comments">
       <Vssue
-        v-if="$frontmatter.comments"
+        v-if="$themeConfig.vssue && $frontmatter.comments"
         :title="$frontmatter.title"
         :options="{
         labels: ['Vssue', $frontmatter.title]
