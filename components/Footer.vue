@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <p>© 2016-{{present}} <i class="icon icon-love"></i> destiny</p>
+    <p>© {{start}}-{{present}} <i class="icon icon-love"></i> destiny</p>
     <span>
       <i class="icon icon-myself">
         <span
@@ -23,11 +23,23 @@
 </template>
 
 <script>
+import moment from "moment";
 export default {
   data() {
     return {
       present: new Date().getFullYear()
     };
+  },
+  computed: {
+    start() {
+      return this.$site.pages
+        .map(page => {
+          return page.frontmatter.date;
+        })
+        .filter(item => !!item)
+        .map(item => moment(item).format("YYYY"))
+        .sort((a, b) => a - b)[0];
+    }
   },
   mounted() {
     this.bsz();
