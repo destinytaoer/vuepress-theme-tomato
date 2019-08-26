@@ -169,6 +169,10 @@ export default {
 }
 
 .footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: $footerHeight;
   padding: 5px 0;
   text-align: center;
   margin-top: 2em;

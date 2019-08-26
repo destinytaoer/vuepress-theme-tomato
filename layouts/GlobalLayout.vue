@@ -144,8 +144,9 @@ html, body {
 
   > .sidebar {
     left: auto;
+    top: $headerHeight;
     right: 0;
-    bottom: auto;
+    bottom: $footerHeight + 20px;
     width: $sidebarWidth;
     background: none;
 

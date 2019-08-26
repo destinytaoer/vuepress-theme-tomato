@@ -71,7 +71,7 @@ export default {
   right: 2.5rem;
   // width 2rem
   color: $accentColor;
-  z-index: 1;
+  z-index: 100;
   font-size: 2.5rem;
   font-weight: 700;
 }
